@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IbizaInterX — Coming Soon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+    <img src="images/logo.svg" alt="IbizaInterX">
+  </a>
+
+  <!-- DESKTOP NAV -->
+<nav class="desktop-nav">
+  <button type="button" class="beta-link beta-open">
+  Explore Beta
+</button>
+
+  <a href="how-it-works.html">How it works</a>
+  <a href="about.html">About</a>
+</nav>
+
+  <button type="button" class="nav-button beta-open">
+  Notify me
+  </button>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button
+    class="menu-toggle"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- MOBILE DROPDOWN -->
+  <div class="mobile-menu">
+    <button type="button" class="beta-link beta-open">
+  Explore Beta
+</button>
+    <a href="how-it-works.html">How it works</a>
+    <a href="about.html">About</a>
+
+    <a href="#notify" class="mobile-notify">
+      Notify me
+    </a>
+  </div>
+
+</header>
+
+<main class="hero">
+
+  <div class="hero-content">
+<h1 class="hero-title">
+  <span class="thin">Your</span> <span class="bold">trip.</span><br>
+  <span class="thin">Your</span> <span class="gradient-text">way.</span>
+</h1>
+
+<p>
+  Tailored itineraries. Shared planning.<br>
+  Real experiences. Direct to the supplier.
+</p>
+
+    <a href="how-it-works.html" class="hero-button">
+      How it works
+      <span>→</span>
+    </a>
+  </div>
+
+<div class="hero-image">
+  <img src="images/hero.png" alt="Ibiza">
+</div>
+
+</main>
+<section class="feature-strip">
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3z"></path>
+        <path d="M9 3v15"></path>
+        <path d="M15 6v15"></path>
+      </svg>
+    </div>
+
+    <div class="feature-text">
+      <h3>Tailored Itineraries</h3>
+      <p>Powered by your preferences</p>
+    </div>
+  </div>
+
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M2 21v-2a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v2"></path>
+        <path d="M16 3.5a4 4 0 0 1 0 7"></path>
+        <path d="M19 21v-2a6 6 0 0 0-3-5.2"></path>
+      </svg>
+    </div>
+
+    <div class="feature-text">
+      <h3>Group Collaboration</h3>
+      <p>Plan together, decide together</p>
+    </div>
+  </div>
+
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+        <path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"></path>
+      </svg>
+    </div>
+
+    <div class="feature-text">
+      <h3>Direct to Supplier</h3>
+      <p>Book with trusted partners</p>
+    </div>
+  </div>
+
+</section>
+<div class="beta-modal" id="betaModal">
+  <div class="beta-modal-card">
+
+    <button type="button" class="beta-close" id="betaClose">
+      ×
+    </button>
+
+    <span class="beta-label">IBIZAINTERX BETA</span>
+
+    <h2>Help shape IbizaInterX.</h2>
+
+    <p>
+      Join the private beta and test IbizaInterX before launch.
+    </p>
+
+    <form class="beta-form">
+      <input
+        type="email"
+        placeholder="Email address"
+        required
+      >
+
+      <button type="submit">
+        Join the beta →
+      </button>
+    </form>
+
+    <small>
+      No spam. Just beta access and important launch updates.
+    </small>
+
+  </div>
+</div>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
