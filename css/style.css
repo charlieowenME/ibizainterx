@@ -1095,21 +1095,22 @@ body {
 /* BIG BRAND SECTION */
 
 .about-statement {
+  position: relative;
+
   width: calc(100% - 80px);
   max-width: 1520px;
   min-height: 340px;
 
   margin: 20px auto 100px;
-  padding: 55px 70px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 
   border-radius: 28px;
-  background: #111111;
+  background: #111;
 }
 
 .about-statement-text h2 {
@@ -1424,6 +1425,35 @@ body {
   .about-hero-copy {
     order: 2;
     padding: 50px 24px 60px;
+  }
+
+}
+@media (min-width: 801px) {
+
+  .about-statement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    padding: 0 70px;
+  }
+
+  .about-statement-text {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .about-statement-visual {
+    justify-self: end;
+    align-self: end;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .about-peacock {
+    margin: 0;
   }
 
 }
