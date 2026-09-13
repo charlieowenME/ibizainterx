@@ -1457,3 +1457,70 @@ body {
   }
 
 }
+/* FOUNDER CONTACT */
+
+.founder-contact {
+  margin-top: 24px;
+}
+
+.founder-email {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #111;
+  text-decoration: none;
+}
+
+.founder-email:hover {
+  color: #8f20f5;
+}
+
+.founder-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #111;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+
+  border-color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #7417ff,
+    #ec24e5
+  );
+
+  color: #ffffff;
+}
