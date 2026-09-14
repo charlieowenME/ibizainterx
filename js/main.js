@@ -1,5 +1,3 @@
-document.body.style.outline = "10px solid red";
-
 document.addEventListener("DOMContentLoaded", () => {
 
   /* MOBILE MENU */
@@ -26,16 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (betaModal && betaClose) {
 
     betaButtons.forEach((button) => {
-
       button.addEventListener("click", () => {
         betaModal.classList.add("open");
 
-        /* Close mobile menu if open */
         if (mobileMenu) {
           mobileMenu.classList.remove("open");
         }
       });
-
     });
 
 
@@ -45,13 +40,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     betaModal.addEventListener("click", (event) => {
-
       if (event.target === betaModal) {
         betaModal.classList.remove("open");
       }
-
     });
 
+  }
+
+
+  /* LINK IN BIO LOADER */
+
+  const bioLoader = document.getElementById("bioLoader");
+
+  if (bioLoader) {
+    setTimeout(() => {
+      bioLoader.classList.add("hide");
+    }, 1000);
   }
 
 });

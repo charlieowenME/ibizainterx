@@ -1651,12 +1651,13 @@ body {
 
 .bio-links {
   width: 100%;
+
   display: flex;
   flex-direction: column;
   gap: 13px;
 
-  margin-top: 90px;
-  margin-bottom: 45px;
+  margin-top: 160px;
+  margin-bottom: 28px;
 }
 
 
@@ -1741,6 +1742,272 @@ box-shadow:
 
   .bio-heading h1 {
     font-size: 52px;
+  }
+
+}
+/* ========================================
+   LINK PAGE MOBILE MOTION
+======================================== */
+
+.bio-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* subtle moving brand glow */
+
+.bio-page::before {
+  content: "";
+
+  position: absolute;
+  width: 380px;
+  height: 380px;
+
+  top: 320px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(116, 23, 255, 0.18) 0%,
+    rgba(236, 36, 229, 0.08) 40%,
+    transparent 70%
+  );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+  z-index: -1;
+
+  animation: bioGlow 9s ease-in-out infinite alternate;
+}
+
+@keyframes bioGlow {
+
+  0% {
+    transform: translate(-20px, 0);
+  }
+
+  100% {
+    transform: translate(220px, 100px);
+  }
+
+}
+
+
+/* buttons appear one after another */
+
+.bio-button {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: bioButtonIn 0.6s ease forwards;
+}
+
+.bio-button:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+.bio-button:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.bio-button:nth-child(3) {
+  animation-delay: 0.26s;
+}
+
+.bio-button:nth-child(4) {
+  animation-delay: 0.34s;
+}
+
+.bio-button:nth-child(5) {
+  animation-delay: 0.42s;
+}
+
+@keyframes bioButtonIn {
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* physical tap feeling */
+
+.bio-button:active {
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bio-page::before,
+  .bio-button {
+    animation: none;
+  }
+
+  .bio-button {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+.bio-status {
+  width: fit-content;
+
+  margin: 28px 0 0;
+
+  padding: 9px 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 1.4px;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.bio-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ec24e5;
+
+  box-shadow: 0 0 12px rgba(236, 36, 229, 0.8);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.bio-status-line {
+  width: 10px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+/* ========================================
+   LINK PAGE LOADING SCREEN
+======================================== */
+
+.bio-loader {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #0d0d0d;
+
+  z-index: 99999;
+
+  transition:
+    opacity 0.55s ease,
+    visibility 0.55s ease;
+}
+
+.bio-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.bio-loader-logo {
+  width: 145px;
+  height: auto;
+
+  margin-bottom: 28px;
+
+  opacity: 0;
+
+  animation: loaderLogoIn 0.6s ease forwards;
+}
+
+.bio-loader-line {
+  width: 90px;
+  height: 2px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.bio-loader-line div {
+  width: 100%;
+  height: 100%;
+
+  transform: translateX(-100%);
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #7417ff,
+    #ec24e5
+  );
+
+  animation: loaderLine 0.9s ease forwards;
+}
+
+@keyframes loaderLogoIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes loaderLine {
+
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 
 }
