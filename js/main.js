@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* HOME PAGE LOADER */
+
+const homeLoader = document.getElementById("homeLoader");
+
+if (homeLoader) {
+  setTimeout(() => {
+    homeLoader.classList.add("hide");
+  }, 1000);
+}
+
   /* MOBILE MENU */
 
   const menuToggle = document.querySelector(".menu-toggle");
