@@ -275,7 +275,9 @@ body {
     display: block;
   }
 
-
+  .about-statement-visual {
+  display: none;
+  }
 
 
 /* -------------------------
