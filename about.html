@@ -23,8 +23,107 @@
     rel="stylesheet"
   >
 
-  <!-- MAIN CSS -->
+  <!-- MAIN CSS — EXISTING STYLESHEET UNCHANGED -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- TECHNOLOGY PARTNER SECTION: ISOLATED STYLES TO PROTECT EXISTING PAGE -->
+  <style>
+    .technology-partner-section {
+      box-sizing: border-box;
+      width: min(calc(100% - 48px), 1122px);
+      margin: 0 auto;
+      padding: clamp(64px, 7vw, 104px) 0;
+    }
+
+    .technology-partner-section,
+    .technology-partner-section * {
+      box-sizing: border-box;
+    }
+
+    .technology-partner-heading {
+      margin-bottom: 40px;
+    }
+
+    .technology-partner-heading h2 {
+      margin: 14px 0 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .technology-partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .technology-partner-profile {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .technology-partner-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 358 / 353;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(100%);
+    }
+
+    .technology-partner-profile h3 {
+      margin: 18px 0 4px;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .technology-partner-role {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #6f6f76;
+    }
+
+
+    .technology-partner-bio {
+      margin: 12px 0 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b4a50;
+    }
+
+    .founder-short-bio {
+      margin: 16px 0 24px;
+      max-width: 55ch;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #6f6f76;
+    }
+
+    @media (max-width: 680px) {
+      .technology-partner-section {
+        width: min(calc(100% - 40px), 358px);
+      }
+
+      .technology-partner-heading {
+        margin-bottom: 28px;
+      }
+
+      .technology-partner-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+  </style>
 
 </head>
 
@@ -33,7 +132,7 @@
 
 
 <!-- =====================================
-     HEADER
+     HEADER — UNCHANGED
 ===================================== -->
 
 <header class="navbar">
@@ -64,7 +163,7 @@
 
 
   <button type="button" class="nav-button beta-open">
-  Notify me
+    Notify me
   </button>
 
 
@@ -98,17 +197,16 @@
       About
     </a>
 
-<button
-  type="button"
-  class="mobile-notify beta-open"
->
-  Notify me
-</button>
+    <button
+      type="button"
+      class="mobile-notify beta-open"
+    >
+      Notify me
+    </button>
 
   </div>
 
 </header>
-
 
 
 <!-- =====================================
@@ -118,41 +216,57 @@
 <main class="about-page">
 
 
-  <!-- INTRO -->
-<section class="about-hero">
+  <!-- INTRO — APPROVED COPY -->
+  <section class="about-hero">
 
-  <div class="about-hero-copy">
+    <div class="about-hero-copy">
 
-    <span class="about-label">
-      ABOUT IBIZAINTERX
-    </span>
+      <span class="about-label">
+        ABOUT IBIZAINTERX
+      </span>
 
-    <h1>
-      Built around the<br>
-      experience.
-    </h1>
+      <h1>
+        Built around the<br>
+        experience.
+      </h1>
 
-    <p>
-      IbizaInterX started with a simple idea.
-      Planning Ibiza should feel as exciting as the trip itself.
-    </p>
+      <p>
+        IbizaInterX started with a simple idea: planning an exceptional trip
+        should be part of the excitement, not the complication.
+      </p>
 
-  </div>
+      <p>
+        We're bringing accommodation, dining, events and experiences together
+        in one connected platform, shaped around each group, their preferences
+        and the way they want to experience Ibiza.
+      </p>
+
+      <p>
+        <strong>The customer chooses what they want to experience.
+        IbizaInterX works out the best way to deliver it.</strong>
+      </p>
+
+      <p>
+        Technology connects the details. People, places and experiences
+        make the trip unforgettable.
+      </p>
+
+    </div>
 
 
-  <div class="about-hero-image">
+    <div class="about-hero-image">
 
-    <img
-      src="images/about-tech-ibiza.png"
-      alt="IbizaInterX technology and Ibiza"
-    >
+      <img
+        src="images/about-tech-ibiza.png"
+        alt="IbizaInterX technology and Ibiza"
+      >
 
-  </div>
+    </div>
 
-</section>
+  </section>
 
 
-  <!-- WHY WE BUILT IT -->
+  <!-- WHY WE BUILT IT — APPROVED COPY -->
   <section class="about-story">
 
     <div class="about-story-heading">
@@ -172,20 +286,23 @@
     <div class="about-story-copy">
 
       <p>
-        We know the Ibiza concierge market and we know what planning
-        a trip can become. Endless WhatsApp messages, scattered bookings,
-        changing availability and too much time spent trying to keep
-        everything together.
+        Organising a group trip can quickly become a maze of WhatsApp
+        conversations, different preferences, scattered bookings,
+        changing availability and decisions about money.
       </p>
 
       <p>
-        It takes the buzz out of something that should be exciting.
+        We believe there's a better way.
       </p>
 
       <p>
-        IbizaInterX is our answer. A customer first platform that brings
-        discovery, AI tailored itineraries, group planning and direct
-        supplier booking into one place.
+        IbizaInterX brings personalised discovery, intelligent budgeting,
+        collaborative planning and coordinated booking requests into one place.
+      </p>
+
+      <p>
+        A clearer way to plan, make decisions and manage the details —
+        so everyone can focus on enjoying the experience.
       </p>
 
     </div>
@@ -193,37 +310,37 @@
   </section>
 
 
-  <!-- BRAND MOMENT -->
-<section class="about-statement">
+  <!-- BRAND MOMENT — UNCHANGED -->
+  <section class="about-statement">
 
-  <div class="about-statement-text">
-    <h2>
-      Less chasing.<br>
-      More discovering.<br>
-      More experiencing.
-    </h2>
-  </div>
+    <div class="about-statement-text">
+      <h2>
+        Less chasing.<br>
+        More discovering.<br>
+        More experiencing.
+      </h2>
+    </div>
 
-  <div class="about-statement-visual">
-    <img
-      src="images/peacock-head.svg"
-      alt=""
-      class="about-peacock"
-    >
-  </div>
+    <div class="about-statement-visual">
+      <img
+        src="images/peacock-head.svg"
+        alt=""
+        class="about-peacock"
+      >
+    </div>
 
-</section>
+  </section>
 
 
-  <!-- FOUNDER -->
+  <!-- FOUNDER — EXISTING STRUCTURE, APPROVED COPY -->
   <section class="founder-section">
 
     <div class="founder-image">
 
-<img
-  src="images/profile-photo.jpeg"
-  alt="Founder of IbizaInterX"
->
+      <img
+        src="images/profile-photo.jpeg"
+        alt="Founder of IbizaInterX"
+      >
 
     </div>
 
@@ -240,88 +357,165 @@
       </h2>
 
       <p>
-        IbizaInterX comes from first hand experience of the Ibiza travel
-        and concierge market, seeing both what makes the island special
-        and where the customer experience can fall apart.
+        IbizaInterX is shaped by first-hand experience of Ibiza's travel
+        and concierge market.
       </p>
 
       <p>
-        The goal is simple. Use technology to remove the friction without
-        removing the people, suppliers and experiences that make Ibiza
-        what it is.
+        We've seen what makes the island extraordinary, the importance of
+        local knowledge and trusted supplier relationships, and where the
+        traditional customer experience can become unnecessarily complicated.
       </p>
 
-<div class="founder-name">
+      <p>
+        Our ambition isn't to replace the personal service that makes Ibiza
+        special. It's to give that service a smarter foundation.
+      </p>
 
-  <strong>
-    Charlie Owen
-  </strong>
+      <p>
+        <strong>Combining technology, expertise and genuine connections to make
+        every trip more considered, connected and effortless.</strong>
+      </p>
 
-  <span>
-    Founder, IbizaInterX
-  </span>
+      <div class="founder-name">
 
-</div>
+        <strong>
+          Charlie Owen
+        </strong>
 
+        <span>
+          Founder, IbizaInterX
+        </span>
 
-<div class="founder-contact">
-
-  <a
-    href="mailto:charlie@ibizainterx.com"
-    class="founder-email"
-  >
-    charlie@ibizainterx.com
-  </a>
+      </div>
 
 
-<div class="founder-socials">
+      <p class="founder-short-bio">
+        With over a decade of business development experience, Charlie leads
+        IbizaInterX's commercial strategy, partnerships and customer experience,
+        bringing together industry relationships and technology to deliver
+        a more considered way of travelling.
+      </p>
 
-  <a
-    href="https://www.instagram.com/ibizainterx"
-    target="_blank"
-    rel="noopener"
-    class="social-button"
-  >
-    Instagram
-  </a>
+      <div class="founder-contact">
 
-  <a
-    href="https://www.facebook.com/ibizainterxofficial"
-    target="_blank"
-    rel="noopener"
-    class="social-button"
-  >
-    Facebook
-  </a>
+        <a
+          href="mailto:charlie@ibizainterx.com"
+          class="founder-email"
+        >
+          charlie@ibizainterx.com
+        </a>
 
-  <a
-    href="https://www.tiktok.com/@ibizainterx"
-    target="_blank"
-    rel="noopener"
-    class="social-button"
-  >
-    TikTok
-  </a>
 
-  <a
-    href="https://www.linkedin.com/company/ibizainterx"
-    target="_blank"
-    rel="noopener"
-    class="social-button"
-  >
-    LinkedIn
-  </a>
+        <div class="founder-socials">
 
-</div>
+          <a
+            href="https://www.instagram.com/ibizainterx"
+            target="_blank"
+            rel="noopener"
+            class="social-button"
+          >
+            Instagram
+          </a>
 
-</div>
+          <a
+            href="https://www.facebook.com/ibizainterxofficial"
+            target="_blank"
+            rel="noopener"
+            class="social-button"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@ibizainterx"
+            target="_blank"
+            rel="noopener"
+            class="social-button"
+          >
+            TikTok
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/ibizainterx"
+            target="_blank"
+            rel="noopener"
+            class="social-button"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- FINAL CTA -->
+  <!-- NEW: TECHNOLOGY PARTNER — BELOW FOUNDER, ABOVE CTA -->
+  <section class="technology-partner-section" aria-labelledby="technology-partner-title">
+
+    <div class="technology-partner-heading">
+
+      <span class="about-label">
+        TECHNOLOGY PARTNER
+      </span>
+
+      <h2 id="technology-partner-title">
+        The people building the platform.
+      </h2>
+
+    </div>
+
+    <div class="technology-partner-grid">
+
+      <article class="technology-partner-profile">
+        <img
+          class="technology-partner-photo"
+          src="images/sanchit-thakur.png"
+          alt="Sanchit Thakur"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3>Sanchit Thakur</h3>
+        <p class="technology-partner-role">Development Partner</p>
+        <p class="technology-partner-bio">Founder of Illuminz, Sanchit leads IbizaInterX's technology and UX direction. His focus is making complex planning, supplier integrations and digital experiences feel intuitive, seamless and reliable.</p>
+      </article>
+
+      <article class="technology-partner-profile">
+        <img
+          class="technology-partner-photo"
+          src="images/aman-kaur.png"
+          alt="Aman Kaur"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3>Aman Kaur</h3>
+        <p class="technology-partner-role">Project Lead</p>
+        <p class="technology-partner-bio">With a Master of Computer Applications and a background in business strategy at Illuminz, Aman leads project delivery for IbizaInterX, connecting the platform's vision with design, development and execution.</p>
+      </article>
+
+      <article class="technology-partner-profile">
+        <img
+          class="technology-partner-photo"
+          src="images/sanchin-khanna.png"
+          alt="Sachin Khanna"
+          loading="lazy"
+          decoding="async"
+        >
+        <h3>Sachin Khanna</h3>
+        <p class="technology-partner-role">Head of Backend Development</p>
+        <p class="technology-partner-bio">A specialist in backend architecture and cloud infrastructure, Sachin leads the development of IbizaInterX's technical foundations, focusing on scalable systems, reliable integrations and long-term performance.</p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA — UNCHANGED -->
   <section class="about-cta">
 
     <div>
@@ -351,13 +545,11 @@
 
   </section>
 
-
 </main>
 
 
-
 <!-- =====================================
-     BETA POPUP
+     BETA POPUP — UNCHANGED
 ===================================== -->
 
 <div class="beta-modal" id="betaModal">
@@ -408,11 +600,8 @@
 </div>
 
 
-
-<!-- JAVASCRIPT -->
-
+<!-- JAVASCRIPT — UNCHANGED -->
 <script src="js/main.js"></script>
-
 
 </body>
 
