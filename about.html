@@ -26,13 +26,33 @@
   <!-- MAIN CSS — EXISTING STYLESHEET UNCHANGED -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- TECHNOLOGY PARTNER SECTION: ISOLATED STYLES TO PROTECT EXISTING PAGE -->
+  <!-- PAGE-SPECIFIC STYLES: FOUNDER SECTION AND GLOBAL CSS REMAIN UNCHANGED -->
   <style>
+    /* Consistent spacing between the four About introduction paragraphs. */
+    .about-page .about-hero-copy p + p {
+      margin-top: 22px;
+    }
+
+    /* Extra breathing room after Charlie's job title. */
+    .founder-content .founder-short-bio {
+      margin: 24px 0 24px;
+    }
+
+    /* Same biography typography for the Founder and all Technology Partners. */
+    .founder-short-bio {
+      max-width: 55ch;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #6f6f76;
+    }
+
+    /* The section also has the existing 'founder-section' class in the HTML.
+       That reuses the SAME width, horizontal padding, and responsive margins
+       as the original Founder section instead of inventing a narrower width. */
     .technology-partner-section {
+      display: block;
       box-sizing: border-box;
-      width: min(calc(100% - 48px), 1122px);
-      margin: 0 auto;
-      padding: clamp(64px, 7vw, 104px) 0;
     }
 
     .technology-partner-section,
@@ -48,9 +68,19 @@
       margin: 14px 0 0;
       font-family: 'Outfit', sans-serif;
       font-size: clamp(32px, 3.5vw, 48px);
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.12;
       letter-spacing: -0.035em;
+      color: #111111;
+    }
+
+    .technology-partner-intro {
+      max-width: 70ch;
+      margin: 18px 0 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #6f6f76;
     }
 
     .technology-partner-grid {
@@ -60,67 +90,60 @@
     }
 
     .technology-partner-profile {
-      margin: 0;
       min-width: 0;
     }
 
-    .technology-partner-photo {
+    .technology-partner-photo,
+    .technology-partner-photo-placeholder {
       display: block;
       width: 100%;
       aspect-ratio: 358 / 353;
       border-radius: 20px;
       object-fit: cover;
       object-position: center;
+    }
+
+    .technology-partner-photo {
       filter: grayscale(100%);
     }
 
-    .technology-partner-profile h3 {
-      margin: 18px 0 4px;
+    .technology-partner-photo[hidden] {
+      display: none;
+    }
+
+    .technology-partner-photo-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f2f2;
+      color: #777777;
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(20px, 2vw, 24px);
+      font-size: 38px;
       font-weight: 500;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
     }
 
-    .technology-partner-role {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      line-height: 1.5;
-      color: #6f6f76;
+    .technology-partner-photo-placeholder[hidden] {
+      display: none;
     }
 
-
-    .technology-partner-bio {
-      margin: 12px 0 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #4b4a50;
+    /* Reuse .founder-name: exact same names and role styling as Charlie's. */
+    .technology-partner-profile .founder-name {
+      margin-top: 18px;
     }
 
-    .founder-short-bio {
-      margin: 16px 0 24px;
-      max-width: 55ch;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #6f6f76;
+    .technology-partner-profile .founder-short-bio {
+      margin: 22px 0 0;
+      max-width: none;
     }
 
-    @media (max-width: 680px) {
-      .technology-partner-section {
-        width: min(calc(100% - 40px), 358px);
-      }
-
+    @media (max-width: 760px) {
       .technology-partner-heading {
         margin-bottom: 28px;
       }
 
       .technology-partner-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 40px;
       }
     }
   </style>
@@ -454,19 +477,16 @@
   </section>
 
 
-  <!-- NEW: TECHNOLOGY PARTNER — BELOW FOUNDER, ABOVE CTA -->
-  <section class="technology-partner-section" aria-labelledby="technology-partner-title">
+  <!-- TECHNOLOGY PARTNER: SAME OUTER CONTAINER AS THE FOUNDER SECTION -->
+  <section class="founder-section technology-partner-section" aria-labelledby="technology-partner-title">
 
     <div class="technology-partner-heading">
-
-      <span class="about-label">
-        TECHNOLOGY PARTNER
-      </span>
-
-      <h2 id="technology-partner-title">
-        The people building the platform.
-      </h2>
-
+      <span class="about-label">TECHNOLOGY PARTNER</span>
+      <h2 id="technology-partner-title">The people building the platform.</h2>
+      <p class="technology-partner-intro">
+        In collaboration with Illuminz, a digital product studio bringing over
+        a decade of experience in design, engineering and technology to IbizaInterX.
+      </p>
     </div>
 
     <div class="technology-partner-grid">
@@ -475,39 +495,65 @@
         <img
           class="technology-partner-photo"
           src="images/sanchit-thakur.png"
+          data-image-basenames="sanchit-thakur"
           alt="Sanchit Thakur"
           loading="lazy"
           decoding="async"
         >
-        <h3>Sanchit Thakur</h3>
-        <p class="technology-partner-role">Development Partner</p>
-        <p class="technology-partner-bio">Founder of Illuminz, Sanchit leads IbizaInterX's technology and UX direction. His focus is making complex planning, supplier integrations and digital experiences feel intuitive, seamless and reliable.</p>
+        <div class="technology-partner-photo-placeholder" hidden aria-label="Sanchit Thakur photo unavailable">ST</div>
+        <div class="founder-name">
+          <strong>Sanchit Thakur</strong>
+          <span>Development Partner</span>
+        </div>
+        <p class="founder-short-bio">
+          Founder of Illuminz, Sanchit leads IbizaInterX's technology and UX direction.
+          Drawing on extensive digital product experience, he focuses on intuitive
+          design, complex integrations and a seamless customer experience.
+        </p>
       </article>
 
       <article class="technology-partner-profile">
         <img
           class="technology-partner-photo"
           src="images/aman-kaur.png"
-          alt="Aman Kaur"
+          data-image-basenames="aman-kaur,aman-benipal"
+          alt="Aman Benipal"
           loading="lazy"
           decoding="async"
         >
-        <h3>Aman Kaur</h3>
-        <p class="technology-partner-role">Project Lead</p>
-        <p class="technology-partner-bio">With a Master of Computer Applications and a background in business strategy at Illuminz, Aman leads project delivery for IbizaInterX, connecting the platform's vision with design, development and execution.</p>
+        <div class="technology-partner-photo-placeholder" hidden aria-label="Aman Benipal photo unavailable">AB</div>
+        <div class="founder-name">
+          <strong>Aman Benipal</strong>
+          <span>Project Lead</span>
+        </div>
+        <p class="founder-short-bio">
+          With a Master’s (Honours) in Social Anthropology and a background in
+          business strategy, Aman brings an understanding of human behaviour
+          and decision-making to IbizaInterX. She leads project coordination
+          and delivery, translating the platform's vision into a cohesive customer experience.
+        </p>
       </article>
 
       <article class="technology-partner-profile">
         <img
           class="technology-partner-photo"
           src="images/sanchin-khanna.png"
+          data-image-basenames="sanchin-khanna,sachin-khanna"
           alt="Sachin Khanna"
           loading="lazy"
           decoding="async"
         >
-        <h3>Sachin Khanna</h3>
-        <p class="technology-partner-role">Head of Backend Development</p>
-        <p class="technology-partner-bio">A specialist in backend architecture and cloud infrastructure, Sachin leads the development of IbizaInterX's technical foundations, focusing on scalable systems, reliable integrations and long-term performance.</p>
+        <div class="technology-partner-photo-placeholder" hidden aria-label="Sachin Khanna photo unavailable">SK</div>
+        <div class="founder-name">
+          <strong>Sachin Khanna</strong>
+          <span>Head of Backend Development</span>
+        </div>
+        <p class="founder-short-bio">
+          Specialising in backend architecture, API integrations and cloud
+          infrastructure, Sachin leads IbizaInterX's technical foundations.
+          His experience with AWS and modern development frameworks supports
+          scalable, secure and reliable platform systems.
+        </p>
       </article>
 
     </div>
@@ -600,8 +646,44 @@
 </div>
 
 
-<!-- JAVASCRIPT — UNCHANGED -->
+<!-- EXISTING JAVASCRIPT -->
 <script src="js/main.js"></script>
+
+<!-- PHOTO FALLBACKS: SUPPORT PNG, WebP, JPEG & AMAN'S OLD/NEW SURNAMES -->
+<script>
+  document.querySelectorAll('img[data-image-basenames]').forEach(function (photo) {
+    const baseNames = photo.dataset.imageBasenames.split(',');
+    const extensions = ['png', 'webp', 'jpg', 'jpeg', 'PNG', 'JPG', 'JPEG'];
+    const candidates = [];
+
+    baseNames.forEach(function (baseName) {
+      extensions.forEach(function (extension) {
+        candidates.push('images/' + baseName.trim() + '.' + extension);
+      });
+    });
+
+    let current = candidates.indexOf(photo.getAttribute('src'));
+    if (current < 0) current = 0;
+
+    function tryNextImage() {
+      current += 1;
+      if (current < candidates.length) {
+        photo.src = candidates[current];
+      } else {
+        photo.hidden = true;
+        const placeholder = photo.nextElementSibling;
+        if (placeholder) placeholder.hidden = false;
+      }
+    }
+
+    photo.addEventListener('error', tryNextImage);
+
+    // Also handle images that failed before the listener was attached.
+    if (photo.complete && photo.naturalWidth === 0) {
+      tryNextImage();
+    }
+  });
+</script>
 
 </body>
 
