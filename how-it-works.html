@@ -19,9 +19,13 @@
 
   <!-- HOW IT WORKS: spacing only; preserves the existing design system -->
   <style>
-    /* Clear paragraph separation in the hero, without changing typography. */
+    /* Regular paragraph spacing: keep the original gap after the heading. */
+    .how-page .how-hero-content > p {
+      margin-bottom: 0;
+    }
+
     .how-page .how-hero-content > p + p {
-      margin-top: 22px;
+      margin-top: 12px;
     }
 
     /* Consistent space between the five step headings and descriptions. */
